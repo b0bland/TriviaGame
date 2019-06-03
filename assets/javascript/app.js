@@ -2,7 +2,11 @@
 $(document).ready(function() {
 
 var questions = ["What is the color of the sky?", "What is the radius of Earth, in miles?", "Which football club has the most English Premier League titles?"];
-
+var answers = {
+    Q1: ["Green", "Blue", "Purple", "Brown"],
+    Q2: ["4420 miles", "3960 miles", "5250 miles", "3070 miles"],
+    Q3: ["Manchester United", "Liverpool", "Arsenal", "Nottingham Forest"]
+}
 
 //Main body is just start button. Next step happens when button is pressed, time also starts. 
 
@@ -16,13 +20,17 @@ for (i=0;i<questions.length;i++) {
     $("#questions").append("<div class='str' id='Q" + (i+1) + "'>" + questions[i] + "</div>")
 };
 
+for (i=0;i<4;i++) {
+    $("#Q1").append("<div class='ans' id='q1a" + (i+1) + "'>" + answers.Q1[i] + "</div>");
+    $("#Q2").append("<div class='ans' id='q2a" + (i+1) + "'>" + answers.Q2[i] + "</div>");
+    $("#Q3").append("<div class='ans' id='q3a" + (i+1) + "'>" + answers.Q3[i] + "</div>");
+};
 
 function ctdn() {
     timer = timer - 1;
     if (timer === 0) {
         clearInterval(int);
         $("#questions").html("<div id='results'>Results</div>");
-        return;
     }
     $("#time").html("Seconds remaining: " + timer)
 };
