@@ -1,32 +1,20 @@
 //Set questions and possble answers in variable
+$(document).ready(function() {
 
-var questions = {
-    Q1: {
-        Q: "What is the color of the sky?",
-        A: "Blue",
-        W1: "Green",
-        W2: "Purple",
-        W3: "Brown"
-    },
-    Q2: {
-        Q: "What is the radius of Earth, in miles?",
-        A: "3960 miles",
-        W1: "5250 miles",
-        W2: "2600 miles",
-        W3: "4420 miles"
-    },
-    Q3: {
-        Q: "Which football club has the most English Premier League titles?",
-        A: "Manchester United",
-        W1: "Liverpool",
-        W2: "Arsenal",
-        W3: "Manchester City"
-    }
-}
+var questions = ["What is the color of the sky?", "What is the radius of Earth, in miles?", "Which football club has the most English Premier League titles?"]
+
 
 //Main body is just start button. Next step happens when button is pressed, time also starts. 
 
 //On click, push the questions in a div in ".questions", replacing the start button
+$("#start").on("click", function() {
+    $("#questions").html(" ")
+for (i=0;i<questions.length;i++) {
+    $("#questions").append("<div class='Q" + (i+1) + "'>" + questions[i] + "</div>")
+}
+
+})
+
 
 //The possible answers should go under the corresponding questions div 
 
@@ -38,3 +26,7 @@ var questions = {
 
 //Present results info, give button to restart 
 
+
+
+
+})
