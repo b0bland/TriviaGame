@@ -4,8 +4,6 @@ $(document).ready(function() {
 var questions = ["What is the color of the sky?", "What is the radius of Earth, in miles?", "Which football club has the most English Premier League titles?"];
 
 
-
-
 //Main body is just start button. Next step happens when button is pressed, time also starts. 
 
 //On click, push the questions in a div in ".questions", replacing the start button
@@ -21,9 +19,9 @@ for (i=0;i<questions.length;i++) {
 
 function ctdn() {
     timer = timer - 1;
-    if (timer <= 0) {
+    if (timer === 0) {
         clearInterval(int);
-        //results
+        $("#questions").html("<div id='results'>Results</div>");
         return;
     }
     $("#time").html("Seconds remaining: " + timer)
