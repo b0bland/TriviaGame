@@ -21,9 +21,9 @@ for (i=0;i<questions.length;i++) {
 };
 
 for (i=0;i<4;i++) {
-    $("#Q1").append("<div class='ans' id='q1a" + (i+1) + "'>" + answers.Q1[i] + "</div>");
-    $("#Q2").append("<div class='ans' id='q2a" + (i+1) + "'>" + answers.Q2[i] + "</div>");
-    $("#Q3").append("<div class='ans' id='q3a" + (i+1) + "'>" + answers.Q3[i] + "</div>");
+    $("#Q1").append("<div class='custom-control custom-radio'><input type='radio' class='custom-control-input' id='q1a" + (i+1) + "' name='group1'>" + "<label class='custom-control-label ans'>" + answers.Q1[i] + "</label></div>");
+    $("#Q2").append("<div class='custom-control custom-radio'><input type='radio' class='custom-control-input' id='q2a" + (i+1) + "' name='group2'>" + "<label class='custom-control-label ans'>" + answers.Q2[i] + "</label></div>");
+    $("#Q3").append("<div class='custom-control custom-radio'><input type='radio' class='custom-control-input' id='q3a" + (i+1) + "' name='group3'>" + "<label class='custom-control-label ans'>" + answers.Q3[i] + "</label></div>");
 };
 
 function ctdn() {
