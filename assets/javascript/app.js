@@ -16,7 +16,7 @@ $(document).on("click", "#start", function() {
     var timer = 15;
     var int = setInterval(ctdn, 1000);
     score = 0;
-    $("#time").html("Seconds remaining: " + timer);
+    $("#time").html("<b>Seconds remaining: " + timer + "</b>");
     $("#questions").html(" ");
 for (i=0;i<questions.length;i++) {
     $("#questions").append("<div class='str' id='Q" + (i+1) + "'>" + questions[i] + "</div>")
@@ -50,7 +50,7 @@ function ctdn() {
         $("#questions").append("<button type='button' class='btn btn-primary btn-lg' id='start'>Restart</button>");
         
     }
-    $("#time").html("Seconds remaining: " + timer)
+    $("#time").html("<b>Seconds remaining: " + timer + "</b>")
 
 };
 
