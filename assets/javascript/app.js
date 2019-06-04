@@ -12,7 +12,7 @@ var answers = {
 
 //On click, push the questions in a div in ".questions", replacing the start button
 $("#start").on("click", function() {
-    var timer = 30;
+    var timer = 5;
     var int = setInterval(ctdn, 1000);
     $("#time").html("Seconds remaining: " + timer);
     $("#questions").html(" ");
@@ -21,16 +21,31 @@ for (i=0;i<questions.length;i++) {
 };
 
 for (i=0;i<4;i++) {
-    $("#Q1").append("<div class='custom-control custom-radio'><input type='radio' id='q1a" + (i+1) + "' name='group1'>" + "<label ans'>&nbsp;" + answers.Q1[i] + "</label></div>");
-    $("#Q2").append("<div class='custom-control custom-radio'><input type='radio' id='q2a" + (i+1) + "' name='group2'>" + "<label ans'>&nbsp;" + answers.Q2[i] + "</label></div>");
-    $("#Q3").append("<div class='custom-control custom-radio'><input type='radio' id='q3a" + (i+1) + "' name='group3'>" + "<label ans'>&nbsp;" + answers.Q3[i] + "</label></div>");
+    $("#Q1").append("<div class='custom-control custom-radio'><input type='radio' id='q1a" + (i+1) + "' name='group1' value='" + i +"'>" + "<label ans'>&nbsp;" + answers.Q1[i] + "</label></div>");
+    $("#Q2").append("<div class='custom-control custom-radio'><input type='radio' id='q2a" + (i+1) + "' name='group2' value='" + i +"'>" + "<label ans'>&nbsp;" + answers.Q2[i] + "</label></div>");
+    $("#Q3").append("<div class='custom-control custom-radio'><input type='radio' id='q3a" + (i+1) + "' name='group3' value='" + i +"'>" + "<label ans'>&nbsp;" + answers.Q3[i] + "</label></div>");
 };
 
 function ctdn() {
     timer = timer - 1;
     if (timer === 0) {
+        //answer check
+        var score = 0;
+        var ans1 = $("input[name=group1]:checked").val();
+        var ans2 = $("input[name=group2]:checked").val();
+        var ans3 = $("input[name=group3]:checked").val();
+        if (ans1 == 1) {
+            score++
+        }
+        if (ans2 == 1) {
+            score++
+        }
+        if (ans3 == 0) {
+            score++
+        }
+        
         clearInterval(int);
-        $("#questions").html("<div id='results'>Results</div>");
+        $("#questions").html("<div id='results'><b>Results:</b></div><div>Correct: " + score);
     }
     $("#time").html("Seconds remaining: " + timer)
 };
