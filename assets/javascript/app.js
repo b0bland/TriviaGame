@@ -12,7 +12,7 @@ var answers = {
 
 //On click, push the questions in a div in ".questions", replacing the start button
 $("#start").on("click", function() {
-    var timer = 5;
+    var timer = 30;
     var int = setInterval(ctdn, 1000);
     $("#time").html("Seconds remaining: " + timer);
     $("#questions").html(" ");
