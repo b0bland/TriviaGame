@@ -7,13 +7,15 @@ var answers = {
     Q2: ["4420 miles", "3960 miles", "5250 miles", "3070 miles"],
     Q3: ["Manchester United", "Liverpool", "Arsenal", "Nottingham Forest"]
 }
+var score = 0;
 
 //Main body is just start button. Next step happens when button is pressed, time also starts. 
 
 //On click, push the questions in a div in ".questions", replacing the start button
-$("#start").on("click", function() {
-    var timer = 30;
+$(document).on("click", "#start", function() {
+    var timer = 15;
     var int = setInterval(ctdn, 1000);
+    score = 0;
     $("#time").html("Seconds remaining: " + timer);
     $("#questions").html(" ");
 for (i=0;i<questions.length;i++) {
@@ -30,7 +32,6 @@ function ctdn() {
     timer = timer - 1;
     if (timer === 0) {
         //answer check
-        var score = 0;
         var ans1 = $("input[name=group1]:checked").val();
         var ans2 = $("input[name=group2]:checked").val();
         var ans3 = $("input[name=group3]:checked").val();
@@ -45,12 +46,16 @@ function ctdn() {
         }
         
         clearInterval(int);
-        $("#questions").html("<div id='results'><b>Results:</b></div><div>Correct: " + score);
+        $("#questions").html("<div id='results'><b>Results:</b></div><div>Correct: " + score + "</div><br>");
+        $("#questions").append("<button type='button' class='btn btn-primary btn-lg' id='start'>Restart</button>");
+        
     }
     $("#time").html("Seconds remaining: " + timer)
+
 };
 
 })
+
 
 
 //The possible answers should go under the corresponding questions div 
