@@ -21,9 +21,9 @@ for (i=0;i<questions.length;i++) {
 };
 
 for (i=0;i<4;i++) {
-    $("#Q1").append("<div class='custom-control custom-radio'><input type='radio' class='custom-control-input' id='q1a" + (i+1) + "' name='group1'>" + "<label class='custom-control-label ans'>" + answers.Q1[i] + "</label></div>");
-    $("#Q2").append("<div class='custom-control custom-radio'><input type='radio' class='custom-control-input' id='q2a" + (i+1) + "' name='group2'>" + "<label class='custom-control-label ans'>" + answers.Q2[i] + "</label></div>");
-    $("#Q3").append("<div class='custom-control custom-radio'><input type='radio' class='custom-control-input' id='q3a" + (i+1) + "' name='group3'>" + "<label class='custom-control-label ans'>" + answers.Q3[i] + "</label></div>");
+    $("#Q1").append("<div class='custom-control custom-radio'><input type='radio' id='q1a" + (i+1) + "' name='group1'>" + "<label ans'>&nbsp;" + answers.Q1[i] + "</label></div>");
+    $("#Q2").append("<div class='custom-control custom-radio'><input type='radio' id='q2a" + (i+1) + "' name='group2'>" + "<label ans'>&nbsp;" + answers.Q2[i] + "</label></div>");
+    $("#Q3").append("<div class='custom-control custom-radio'><input type='radio' id='q3a" + (i+1) + "' name='group3'>" + "<label ans'>&nbsp;" + answers.Q3[i] + "</label></div>");
 };
 
 function ctdn() {
